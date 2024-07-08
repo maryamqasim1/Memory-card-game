@@ -1,3 +1,58 @@
+html,
 body {
-    background-color: antiquewhite;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  background-color: #bce1ff;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto 10%;
+  align-items: center;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  width: 150px;
+  height: 150px;
+  border: 1px solid white;
+  perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Position the front and back side */
+.hideCard,
+.showCard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  background-color: #ff90bc;
+}
+
+.showCard {
+  transform: rotateY(180deg);
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+}
+
+button {
+  margin: 3vh auto;
+  display: flex;
 }
