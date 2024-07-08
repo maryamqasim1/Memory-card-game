@@ -56,3 +56,10 @@ button {
   margin: 3vh auto;
   display: flex;
 }
+
+
+h1{
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+}

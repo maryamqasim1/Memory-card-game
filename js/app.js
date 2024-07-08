@@ -1,16 +1,62 @@
 /*-------------- Constants -------------*/
 
+const pics = [
+  'pic/cat1.png',
+  'pic/cat2.png',
+  'pic/cat3.png',
+  'pic/cat4.png',
+];
 
 /*---------- Variables (state) ---------*/
 
 let cardsArr = [];
+let displayPics = pics.concat(pics);
 
 /*----- Cached Element References  -----*/
 
-const startBtn = document.querySelector('button'); //
+const container = document.querySelector('.container')
+const startBtn = document.querySelector('button');
+
+// const randomImage = () => { 
+//   randomNum = Math.floor(Math.random() * (pics.length)); 
+//   displayPics =  pics[randomNum];
+//   console.log(displayPics);
+// } 
+// randomImage();
+
+/* creating this HTML 
+<div class="flip-card">
+  <div class="flip-card-inner hideCard display" id="0">
+    <div class="showCard">
+      <img src="pic/cat1.png" alt="">
+    </div>
+  </div>
+</div> 
+*/
+const createHTML = () => {
+  displayPics.forEach((x, index) => {
+    div = document.createElement("div");
+    div.classList.add('flip-card');
+    container.appendChild(div);
+    
+    div2 = document.createElement("div");
+    div2.classList.add('flip-card-inner', 'hideCard', 'display');
+    div2.setAttribute('id', index);
+    div.appendChild(div2);
+    
+    div3 = document.createElement("div");
+    div3.classList.add('showCard');
+    div2.appendChild(div3);
+    
+    imgHTML = document.createElement("img");
+    imgHTML.src = x;
+    div3.appendChild(imgHTML);
+  });
+}
+createHTML();
+
 const hiddenCard = document.querySelectorAll('.hideCard')
 const showCard = document.querySelectorAll('.display');
-// const container = document.querySelector('.container')
 
 /*-------------- Functions -------------*/
 
@@ -27,7 +73,6 @@ const hideCardElement = (card) => {
 const handleClick = () => {
   showCard.forEach(card => {
     showCardElement(card);
-
     setTimeout(() => {
       hideCardElement(card);
     }, '5000');
@@ -40,7 +85,6 @@ const flipCard = (event) => {
   if (startBtn.disabled === true && cardsArr.length < 2) {
     cardIndex = event.target.id;
     showCardElement(showCard[cardIndex]);
-
     cardsArr.push(showCard[cardIndex]);
     if (cardsArr.length === 2)
       matchingCard();
@@ -50,7 +94,6 @@ const flipCard = (event) => {
 const matchingCard = () => {
   const card1 = cardsArr[0];
   const card2 = cardsArr[1];
-
   if (card1.querySelector('img').src !== card2.querySelector('img').src) {
     setTimeout(() => {
       hideCardElement(card1);
@@ -68,6 +111,6 @@ const matchingCard = () => {
 /*----------- Event Listeners ----------*/
 
 startBtn.addEventListener('click', handleClick);
-hiddenCard.forEach((x, index) => {
-  x.addEventListener('click', (event, index) => flipCard(event));
-})
+hiddenCard.forEach((x) => {
+  x.addEventListener('click', (event) => flipCard(event));
+});
