@@ -1,9 +1,60 @@
 html,
 body {
-  height: 100%;
-  width: 100%;
-  align-content: center;
   background-color: #bce1ff;
+  /* user-select: none; */
+}
+
+/* ex:4 https://speckyboy.com/css-js-notification-alert-code/ */
+.msg {
+  background: rgba(0, 0, 0, 0.801);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  color: #ffd700;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+
+.close {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: 900;
+  text-decoration: none;
+  color: red;
+  background-color: white;
+  width: 35px;
+  text-align: center;
+  border-radius: 100%;
+}
+
+.close:hover {
+  color: rgb(208, 9, 9);
+}
+
+.feedback {
+  max-width: 60%;
+  max-height: 60%;
+  width: auto;
+  height: auto;
+  display: none;
+}
+
+.all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -11,13 +62,13 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   margin: auto 10%;
-  align-items: center;
+  width: 50%;
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
   border: 1px solid white;
   perspective: 1000px;
 }
@@ -40,6 +91,9 @@ body {
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
   background-color: #ff90bc;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .showCard {
@@ -47,19 +101,23 @@ body {
 }
 
 img {
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
   background-size: cover;
 }
 
 button {
   margin: 3vh auto;
   display: flex;
+  padding: 15px 25px;
+  background-color: #0099cc;
+  color: white;
+  font-weight: 700;
+  border: 1px solid white;
+  border-radius: 50px;
+  font-size: large;
 }
 
-
-h1{
-  display: flex;
-  justify-content: center;
-  font-weight: 900;
+button:disabled {
+  background-color: #cccccc;
 }
