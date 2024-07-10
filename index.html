@@ -7,12 +7,25 @@
     <title>Memory Card Game</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="all">
-        <h1>Match The Cats ^_^</h1>
+        <div class="textContainer patrick-hand-regular">
+            <h1>Match The Cats</h1>
+            <div class="counter">
+                <h2 id="lostCount"></h2>
+                <!-- <h2 id="lostCount">WIN: 3</h2> -->
+            </div>
+        </div>
         <div class="container">
+        </div>
+        <div class="buttons">
+            <button type="button" class="rstBtn">RESTART</button>
+            <button type="button" class="startBtn">START</button>
         </div>
         <!-- This div is hidden -->
         <div class="msg">
@@ -26,7 +39,6 @@
                 alt="angry cat" class="feedback" id="loss">
             </img>
         </div>
-        <button>START</button>
     </div>
 </body>
 

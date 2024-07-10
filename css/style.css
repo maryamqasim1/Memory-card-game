@@ -1,7 +1,7 @@
 html,
 body {
   background-color: #bce1ff;
-  /* user-select: none; */
+  user-select: none;
 }
 
 /* ex:4 https://speckyboy.com/css-js-notification-alert-code/ */
@@ -40,7 +40,8 @@ body {
 }
 
 .close:hover {
-  color: rgb(208, 9, 9);
+  color: white;
+  background-color: red;
 }
 
 .feedback {
@@ -107,17 +108,46 @@ img {
 }
 
 button {
-  margin: 3vh auto;
-  display: flex;
-  padding: 15px 25px;
-  background-color: #0099cc;
-  color: white;
-  font-weight: 700;
   border: 1px solid white;
+  color: white;
   border-radius: 50px;
-  font-size: large;
+  font-weight: 700;
+  font-size: medium;
+  margin: 3vh auto;
 }
 
 button:disabled {
   background-color: #cccccc;
+}
+
+.buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.startBtn {
+  background-color: rgb(50, 215, 50);
+  padding: 15px 25px;
+}
+
+.rstBtn {
+  background-color: rgb(208, 0, 0);
+  padding: 15px 15px;
+}
+
+.textContainer {
+  width: 40%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.counter {
+  line-height: 0;
+  width: 100%;
+  float: left;
+  color: red;
+  font-size: 11px;
+  font-family: system-ui;
 }

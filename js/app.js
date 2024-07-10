@@ -20,7 +20,8 @@ let winner = Boolean;
 /*----- Cached Element References  -----*/
 
 const container = document.querySelector('.container')
-const startBtn = document.querySelector('button');
+const startBtn = document.querySelector('.startBtn');
+const rstBtn = document.querySelector('.rstBtn');
 
 /*-------------- Functions -------------*/
 
@@ -76,6 +77,7 @@ const closeBtn = document.querySelector('.close');
 const winImg = document.getElementById('win');
 const lossImg = document.getElementById('loss');
 const text = document.querySelector('.printMsg');
+const counter = document.querySelector('#lostCount')
 
 /*-------------- Functions -------------*/
 
@@ -89,6 +91,7 @@ const hideCardElement = (card) => {
   card.classList.add('hideCard');
 }
 
+rstBtn.disabled = true;
 const handleClick = () => {
   showCard.forEach(card => {
     showCardElement(card);
@@ -97,6 +100,7 @@ const handleClick = () => {
     }, '5000');
   })
   startBtn.disabled = true;
+  rstBtn.disabled = false;
 }
 // startBtn.disabled = true; // for test remove later
 
@@ -112,6 +116,7 @@ const flipCard = (event) => {
 }
 
 // check if the 2 cards are matching
+counter.innerHTML = `LOSS: ${loss}`
 const matchingCard = () => {
   const card1 = cardsArr[0];
   const card2 = cardsArr[1];
@@ -122,13 +127,13 @@ const matchingCard = () => {
       cardsArr = [];
     }, '800');
     loss++;
-    console.log('loss: ' + loss);
+    counter.innerHTML = `LOSS: ${loss}`
     gameStat();
   }
 
   else if (card1.querySelector('img').src !== card2.querySelector('img').src && loss === 2) {
     loss++;
-    console.log('loss: ' + loss);
+    counter.innerHTML = `LOSS: ${loss}`
     gameStat();
   }
 
@@ -176,10 +181,16 @@ const close = () => {
   messageEle[0].style.opacity = 0;
 }
 
+const restartGame = () => {
+  if (startBtn.disabled === true)
+    window.location.reload();
+}
+
 /*----------- Event Listeners ----------*/
 
 startBtn.addEventListener('click', handleClick);
 closeBtn.addEventListener('click', close);
+rstBtn.addEventListener('click', restartGame);
 hiddenCard.forEach((x) => {
   x.addEventListener('click', (event) => flipCard(event));
 });
