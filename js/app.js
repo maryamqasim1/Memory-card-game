@@ -25,7 +25,6 @@ const rstBtn = document.querySelector('.rstBtn');
 
 /*-------------- Functions -------------*/
 
-// shuffleArray code from: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 shuffleArray(displayPics);
 function shuffleArray() {
   for (i = displayPics.length - 1; i > 0; i--) {
@@ -177,6 +176,7 @@ const close = () => {
   messageEle[0].style.opacity = 0;
 }
 
+// Restart Game
 const restartGame = () => {
   if (startBtn.disabled === true)
     window.location.reload();
