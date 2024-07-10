@@ -5,7 +5,7 @@ The game will start with a set of cards displayed for 5 seconds challenging play
 
 ## Getting started
 The project can be viewed [here](https://maryamqasim1.github.io/Memory-card-game/) <br />
-The project plan can be viewed [here](https://github.com/maryamqasim1/Memory-card-game/blob/main/ProjectPlan)
+The project plan can be viewed [here](https://github.com/maryamqasim1/Memory-card-game/blob/main/ProjectPlan.md)
 
 ## Technologies used
 * HTML
