@@ -4,7 +4,6 @@ body {
   user-select: none;
 }
 
-/* ex:4 https://speckyboy.com/css-js-notification-alert-code/ */
 .msg {
   background: rgba(0, 0, 0, 0.801);
   position: absolute;
@@ -122,7 +121,7 @@ button:disabled {
 
 .buttons {
   display: flex;
-  gap: 2px;
+  gap: 5px;
 }
 
 .startBtn {
@@ -143,6 +142,12 @@ button:disabled {
   line-height: 1;
 }
 
+.textContainer h1{
+  color: #117411;
+  text-shadow: #bce1ff;
+  font-size: 30px;
+}
+
 .counter {
   line-height: 0;
   width: 100%;
@@ -150,4 +155,5 @@ button:disabled {
   color: red;
   font-size: 11px;
   font-family: system-ui;
+  border-bottom: ;
 }

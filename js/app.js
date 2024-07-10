@@ -116,7 +116,6 @@ const flipCard = (event) => {
 }
 
 // check if the 2 cards are matching
-counter.innerHTML = `LOSS: ${loss}`
 const matchingCard = () => {
   const card1 = cardsArr[0];
   const card2 = cardsArr[1];
@@ -140,7 +139,6 @@ const matchingCard = () => {
   else if (card1.querySelector('img').src === card2.querySelector('img').src) {
     cardsArr = [];
     win++;
-    console.log('win: ' + win);
     gameStat();
   }
 }
@@ -163,7 +161,6 @@ const message = () => {
     messageEle[0].style.opacity = 1;
     winImg.style.display = 'block';
     text.innerHTML = 'Congrats!!! you won :D';
-    console.log(win);
   }
   if (winner === false) {
     messageEle[0].style.visibility = 'visible';
@@ -171,7 +168,6 @@ const message = () => {
     lossImg.style.display = 'block';
     text.innerHTML = 'WORK ON YOUR MEMORY!!!!';
     text.style.color = 'red'
-    console.log(loss);
   }
 }
 
